@@ -1,0 +1,216 @@
+#main-cont{
+    background: linear-gradient(252deg, #E2E9FF 0%, #FFF 100%);
+}
+
+.hero-section h1{
+    font-size: calc(1.5vw + 5rem);
+    letter-spacing: -10px;
+    text-align: center;
+}
+
+.hero-section h2{
+    font-size: calc(1.5vw + 2.15rem);
+    font-weight: 300;
+    text-align: center;
+    letter-spacing: -4px;
+    margin-top: -1rem;
+}
+
+.hero-section h4{
+    font-size: 2rem;
+    font-weight: 300;
+    letter-spacing: -2.5px;
+}
+
+.hero-section{
+    color: aliceblue;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    padding: 0 3rem;
+    cursor: default;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.footer{
+    display: flex;
+    justify-content: start;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 3.5rem 8rem;
+}
+
+.navbar{
+    display: flex;
+    justify-content: end;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 3.5rem 8rem;
+}
+
+.navbar ul{
+    display: flex;
+    flex-direction: row;
+    gap: 2rem;
+}
+
+ul li{
+    list-style: none;
+}
+
+a{
+    text-transform: uppercase;
+    font-size: .99rem;
+    font-weight: 400;
+    color: aliceblue;
+    letter-spacing: -.6px;
+    text-decoration: none;
+}
+
+.backLines{
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    padding: 0 4rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.innerBlines{
+    width: 100%;
+    height: 100vh;
+    border: 1px solid rgba(185, 185, 185, 0.60);
+}
+
+.social-section{
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.social-links{
+    letter-spacing: -10px;
+    font-size: calc(2vw + 5rem);
+}
+
+
+.social-links h3{
+    text-align: center;
+    margin-top: -2.2rem;
+}
+
+.socLinks{
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    cursor: pointer;
+}
+
+#driA{
+    display: none;
+}
+#behA{
+    display: none;
+}
+#insA{
+    display: none;
+}
+#twiA{
+    display: none;
+}
+
+#dri:hover #driA{
+    display: block;
+}
+#ins:hover #insA{
+    display: block;
+}
+#twi:hover #twiA{
+    display: block;
+}
+#beh:hover #behA{
+    display: block;
+}
+
+.proj-sec{
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.proj-card{
+    width: 250px;
+    height: 350px;
+    background-color: rgb(42, 138, 221);
+    transition: .6s;
+    transition-timing-function: cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+
+
+.proj-card-container{
+    display: flex;
+    flex-direction: row;
+    gap: 1.2rem;
+}
+
+li{
+    list-style: none;
+}
+
+.projbg{
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    pointer-events: none;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+#projbg1{
+    background-image: url('./assets/GreenhouseHero.jpg');
+}
+#projbg2{
+    background-image: url('./assets/Ted.jpg');
+}
+#projbg3{
+    background-image: url('./assets/TrilithHero.jpg');
+}
+#projbg4{
+    background-image: url('./assets/winshape-camps.png');
+}
+
+.proj-card:hover{
+    background-color: #E2E9FF;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+
+.hide{
+    opacity: 0;
+    pointer-events: none;
+    transition: .2s;
+    transition-timing-function: ease-in-out;
+}
+
+.visible{
+    opacity: 1;
+    pointer-events: all;
+}
