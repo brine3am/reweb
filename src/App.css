@@ -1,11 +1,43 @@
+@font-face {
+    font-family: 'RosieBrown';
+    src: local('RosieBrown'),
+         url('./font/RosieBrownSerif.otf') format('opentype');
+}
+
 #main-cont{
     background: linear-gradient(252deg, #E2E9FF 0%, #FFF 100%);
 }
 
+/* SCROLLBAR CSS STARTS */
+/* width */
+::-webkit-scrollbar {
+    width: 7px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background-color: #E2E9FF;
+  }
+   
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: rgba(25, 25, 25, 0.168); 
+    border-radius: 10px;
+  }
+  /* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: rgba(25, 25, 25, 0.259); 
+  }
+/* SCROLLBAR CSS ENDS */
+
 .hero-section h1{
-    font-size: calc(1.5vw + 5rem);
+    font-size: calc(3vw + 6.5rem);
     letter-spacing: -10px;
     text-align: center;
+    line-height: 85%;
+    font-family: 'RosieBrown';
+    /* text-transform: uppercase; */
+    font-weight: 400;
 }
 
 .hero-section h2{
@@ -36,6 +68,24 @@
     align-items: center;
 }
 
+@media only screen and (max-width: 840px){
+    .hero-section h1{
+        font-size: calc(3vw + 3.5rem);
+        letter-spacing: -6px;
+        text-align: center;
+        line-height: 85%;
+        font-family: 'RosieBrown';
+        /* text-transform: uppercase; */
+        font-weight: 400;
+    }   
+}
+
+@media only screen and (max-width: 520px){
+    .hero-section {
+        padding: 0 1rem;
+    }   
+}
+
 .footer{
     display: flex;
     justify-content: start;
@@ -44,16 +94,24 @@
     left: 0;
     width: 100%;
     padding: 3.5rem 8rem;
+    z-index: 999;
 }
 
 .navbar{
     display: flex;
-    justify-content: end;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     padding: 3.5rem 8rem;
+    z-index: 999;
+}
+
+.nav-logo{
+    width: 100px;
 }
 
 .navbar ul{
@@ -74,6 +132,8 @@ a{
     letter-spacing: -.6px;
     text-decoration: none;
 }
+
+
 
 .backLines{
     width: 100%;
@@ -108,6 +168,7 @@ a{
 
 
 .social-links h3{
+    /* font-family: 'RosieBrown'; */
     text-align: center;
     margin-top: -2.2rem;
 }
@@ -148,16 +209,42 @@ a{
 .proj-sec{
     min-height: 100vh;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
+    /* background: url('./assets/masonry-texture.svg'); */
+    background-size: contain;
+    background-position: 50% 0;
 }
 
 .proj-card{
+    cursor: pointer;
+    border-radius: .5rem;
     width: 250px;
     height: 350px;
-    background-color: rgb(42, 138, 221);
+    background-color: rgb(13, 13, 13);
     transition: .6s;
     transition-timing-function: cubic-bezier(0.19, 1, 0.22, 1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+    padding: 4rem 0;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+}
+
+
+.proj-card a{
+    font-weight: 500;
+    letter-spacing: -1px;
+    opacity: 0;
+    transition: .6s;
+    transition-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+.proj-card:hover a{
+    opacity: 1;
+    pointer-events: none;
 }
 
 
@@ -165,6 +252,9 @@ a{
 .proj-card-container{
     display: flex;
     flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
     gap: 1.2rem;
 }
 
@@ -184,12 +274,35 @@ li{
     background-size: cover;
     background-repeat: no-repeat;
 }
+#p1{
+    background: url('./assets/natgeo.gif');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    transition: .4s;
+}
 
+#p1:hover{
+    background: #ffffff;
+}
+
+#p2{
+    background: url('./assets/crystal.gif');
+    background-color: #2D211D;
+    background-position: center;
+
+    background-size: cover;
+    background-repeat: no-repeat;
+    transition: .4s;
+}
+#p2:hover{
+    background: #ffffff;
+}
 #projbg1{
-    background-image: url('./assets/GreenhouseHero.jpg');
+    background-image: url('./assets/natgeo1080p.jpg');
 }
 #projbg2{
-    background-image: url('./assets/Ted.jpg');
+    background-image: url('./assets/bgnew.jpg');
 }
 #projbg3{
     background-image: url('./assets/TrilithHero.jpg');
@@ -199,18 +312,185 @@ li{
 }
 
 .proj-card:hover{
-    background-color: #E2E9FF;
+    background: #ffffff;
     box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 }
 
 .hide{
     opacity: 0;
     pointer-events: none;
-    transition: .2s;
+    transition: .1s;
     transition-timing-function: ease-in-out;
 }
 
 .visible{
     opacity: 1;
     pointer-events: all;
+}
+
+.proj-textsec{
+    margin-bottom: 8rem;
+}
+
+.proj-textsec h6{
+    text-align: center;
+}
+
+.proj-textsec p{
+    text-align: center;
+    max-width: 760px;
+    font-size: 2.7rem;
+    margin-top: 1rem;
+    letter-spacing: -.05em;
+}
+
+/* *carousel css start */
+
+.carousel{
+    max-width: 100%;
+    margin: 7rem 0;
+    display: flex;
+    overflow: hidden;
+    padding: 2rem 0;
+    transition: .8s;
+    background: linear-gradient(252deg, #E2E9FF 0%, #FFF 100%);
+  }
+  
+  @keyframes slide {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(-100%);
+    }
+  }
+  
+  .carousel-slide{
+    display: flex;
+    animation: 23s slide infinite linear;
+  }
+  
+  .carousel-slide h1{
+    /* font-family: 'RosieBrown'; */
+    cursor: pointer;
+    white-space: nowrap;
+    font-weight: 300;
+    font-size: calc(1vw + 3rem);
+    letter-spacing: -6px;
+    margin-left: 2rem;
+    transition: .6s;
+    transition-timing-function: cubic-bezier(.785,.135,.15,.86);
+  }
+  
+  /* *carousel css end */
+
+.hero-desc{
+    width: 100%;
+    min-height: 50vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 12rem;
+    margin-bottom: 5rem;
+}
+
+.hero-desc p{
+    font-size: 2.5rem;
+    letter-spacing: -3px;
+}
+
+.hero-desc-f{
+    padding: 0 8rem;
+}
+
+@media only screen and (max-width: 900px){
+    .navbar{
+        padding: 2rem 6rem;
+        justify-content: center;
+        background-color: #e2e9ff96;
+        backdrop-filter: blur(2.3rem);
+        box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+    }
+    .nav-logo{
+        width: 80px;
+    }
+    .navbar ul{
+        display: none;
+    }
+    .footer{
+        justify-content: center;
+        padding: 3rem 5rem;
+    }
+    .footername{
+        text-align: center;
+    }
+}
+
+
+@media only screen and (max-width: 1382px){
+    .hero-desc{
+        flex-direction: column;
+    }
+
+    .hero-desc h1, p{
+        text-align: center;
+    }
+}
+
+@media only screen and (max-width: 1200px){
+    .hero-desc{
+        padding: 0 6rem;
+    }
+
+}
+
+@media only screen and (max-width: 900px){
+    .hero-desc p{
+        font-size: 1.9rem;
+        letter-spacing: -2px;
+    }
+    .hero-desc{
+        padding: 0 4rem;
+    }
+    .hero-desc-f{
+        padding: 0 3rem;
+    }
+}
+
+@media only screen and (max-width: 600px){
+
+    .hero-desc{
+        padding: 0 3rem;
+    }
+    .hero-desc-f{
+        padding: 0;
+    }
+    .hero-desc p{
+        font-size: 1.4rem;
+        letter-spacing: -2px;
+    }
+}
+
+@media only screen and (max-width: 1120px){
+    .proj-card{
+        width: 150px;
+        height: 250px;
+    }
+}
+
+@media only screen and (max-width: 860px){
+    .proj-textsec{
+        padding: 0 1.2rem;
+    }
+    .proj-textsec p {
+        font-size: 2rem;
+    }
+}
+
+@media only screen and (max-width: 530px){
+    .social-links h3{
+        font-size: 4.5rem;
+        letter-spacing: -7px;
+        line-height: 6rem;
+    }
 }
